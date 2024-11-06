@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
         else if(whatIHit.tag == "Weapon")
         {
             //I got shot!
-            GameObject.Find("GameManager").GetComponent<GameManager>().EarnScore(1);
+            GameObject.Find("GameManager").GetComponent<GameManager>().EarnScore(5);
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(whatIHit.gameObject);
             Destroy(this.gameObject);
