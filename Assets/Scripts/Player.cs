@@ -10,11 +10,11 @@ public class Player : MonoBehaviour
     // optional: give it an initial value
     private float speed;
     private int lives = 3;
-    private int score = 0;
     private float horizontalInput;
     private float verticalInput;
 
     public GameObject bullet;
+    public GameObject explosion;
 
     // Start is called before the first frame update
     void Start()
@@ -71,4 +71,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void LoseALife()
+    {
+        lives--;
+        if(lives == 0)
+        {
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
+    }
 }
