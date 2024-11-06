@@ -8,6 +8,9 @@ MonoImporter:
   - enemy: {fileID: 567623098501924862, guid: 44cdc231bd911ec44acb261d2d716aa8, type: 3}
   - enemy1: {fileID: 6662702586630741179, guid: b9c1ae00588885744b2f7f54497a0687, type: 3}
   - cloud: {fileID: 4735551655687211995, guid: 98f131c5dd75e6941a88beec5d02286a, type: 3}
+  - scoreText: {fileID: 6569771192856087445, guid: 92f5d6b2e1a8dcf4499bb650a6b0ca7b, type: 3}
+  - livesText: {instanceID: 0}
+  - explosion: {fileID: 2206989333032675194, guid: 94f32318982b7e5489caebe93c839da8, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -15,6 +15,11 @@ public class GameManager : MonoBehaviour
     private int score;
     public TextMeshProUGUI scoreText;
 
+    private int lives;
+    public TextMeshProUGUI livesText;
+
+    public GameObject explosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +30,9 @@ public class GameManager : MonoBehaviour
         
         score = 0;
         scoreText.text = "Score: " + score;
+
+        lives = 3;
+        livesText.text = "Lives: " + lives;
     }
 
     // Update is called once per frame
@@ -55,5 +63,17 @@ public class GameManager : MonoBehaviour
     {
         score = score + newScore;
         scoreText.text = "Score: " + score;
+    }
+
+    public void LoseALife(Collider2D whatIHit)
+    {
+        lives--;
+        livesText.text = "Lives: " + lives;
+
+        if(lives == 0)
+        {   
+            Instantiate(explosion, whatIHit.transform.position, Quaternion.identity);
+            Destroy(whatIHit.gameObject);
+        }
     }
 }

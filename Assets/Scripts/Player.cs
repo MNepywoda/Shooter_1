@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -9,7 +11,6 @@ public class Player : MonoBehaviour
     // its name: speed, playerSpeed --- Speed, PlayerSpeed
     // optional: give it an initial value
     private float speed;
-    private int lives = 3;
     private float horizontalInput;
     private float verticalInput;
 
@@ -68,16 +69,6 @@ public class Player : MonoBehaviour
         {
             //Create a bullet
             Instantiate(bullet, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
-        }
-    }
-
-    public void LoseALife()
-    {
-        lives--;
-        if(lives == 0)
-        {
-            Instantiate(explosion, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
         }
     }
 }
