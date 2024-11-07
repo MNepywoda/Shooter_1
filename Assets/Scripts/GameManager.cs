@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject cloud;
 
     public GameObject coin;
+    public GameObject health;
 
     private int score;
     public TextMeshProUGUI scoreText;
@@ -28,7 +29,10 @@ public class GameManager : MonoBehaviour
         Instantiate(player, transform.position, Quaternion.identity);
         InvokeRepeating("CreateEnemy", 1f, 3f);
         InvokeRepeating("CreateEnemy1", 10f, 5f);
+        
         InvokeRepeating("CreateCoin", 20f, Random.Range(10f, 15f));
+        InvokeRepeating("CreateHealth", 25f, Random.Range(15f, 20f));
+
         CreateSky();
         
         score = 0;
@@ -59,6 +63,11 @@ public class GameManager : MonoBehaviour
         Instantiate(coin, new Vector3(Random.Range(-9f, 9f), Random.Range(-4f, 0f), 0), Quaternion.identity);
     }
 
+    void CreateHealth()
+    {
+        Instantiate(health, new Vector3(Random.Range(-9f, 9f), Random.Range(-4f, 0f), 0), Quaternion.identity);
+    }
+
     void CreateSky()
     {   
         for(int i = 0; i < 20; i++)
@@ -82,6 +91,20 @@ public class GameManager : MonoBehaviour
         {   
             Instantiate(explosion, whatIHit.transform.position, Quaternion.identity);
             Destroy(whatIHit.gameObject);
+        }
+    }
+
+    public void GetALife()
+    {
+        if(lives < 3)
+        {
+            lives++;
+            livesText.text = "Lives: " + lives;
+        }
+
+        else
+        {
+            EarnScore(1);
         }
     }
 }

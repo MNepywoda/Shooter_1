@@ -14,13 +14,6 @@ public class Coin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(2, 0, 0) * Time.deltaTime * 3f);
-
-        if (transform.position.x > 11.5f || transform.position.x <= -11.5f)
-        {
-            transform.position = new Vector3(transform.position.x * -1, transform.position.y, 0);
-        }
-
         if(Time.time-startTime >= 5)
         {
             Destroy(this.gameObject);

@@ -360,6 +360,7 @@
 "Assets/Scripts/Enemy1.cs"
 "Assets/Scripts/Explosion.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/Health.cs"
 "Assets/Scripts/Player.cs"
 -langversion:9.0
 /deterministic
